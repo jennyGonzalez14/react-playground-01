@@ -3,12 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter} from 'react-router-dom'
+import { ThemeProvider } from '@mui/material'
+import { orcTheme } from '@otto-ec/it-dr-design-system-themes'
+import { CssBaseline } from "@mui/material";
+import { AlertSnackbarProvider} from '@otto-ec/it-dr-design-system-components/experimental'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <ThemeProvider theme={orcTheme}>
+  <CssBaseline/>
+  <BrowserRouter>
+    <AlertSnackbarProvider>
+      <App/>
+    </AlertSnackbarProvider>
+  </BrowserRouter>
+</ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
