@@ -9,10 +9,9 @@ import Grid from "@mui/material/Unstable_Grid2";
 
 import { observer } from "mobx-react";
 
-import { useAlertSnackbar } from "@otto-ec/it-dr-design-system-components/experimental";
+import { WeatherTable } from "./components/WeatherTable";
 
 export const MainPage = observer(() => {
-    const alert = useAlertSnackbar();
 
     return (
         <Grid
@@ -37,12 +36,10 @@ export const MainPage = observer(() => {
                             <br /> Weather Forecast
                         </Typography>                        
                     </Grid>
-
-
-
-
+                    <Grid item xs={12}>
+                        <WeatherTable />
+                    </Grid>
                 </Grid>
-
                 </MuiPaper>    
             </Grid>
 
